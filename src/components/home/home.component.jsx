@@ -1,9 +1,11 @@
+import React, { useState, useEffect } from 'react';
 import { Outlet } from "react-router";
 import img from '../../assets/img.png'
 import down from '../../assets/down.png'
 import './home.styles.css'
 
 const Home = () => {
+
     return (
         <div className="home">
                 <Outlet />
@@ -40,14 +42,10 @@ const Home = () => {
                     </div>
                 </div>
     
-                {/* <div className='shader' /> */}
-                {/* <div className="shader2" /> */}
                 <div className="shader3" />
             </div>
 
-            
         </div>
-
     );
 }
 

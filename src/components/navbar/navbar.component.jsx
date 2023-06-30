@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import logo from '../../assets/TalentTrack.png';
 import './navbar.styles.css'
 import avatar from '../../assets/avatar.png'
@@ -6,7 +7,18 @@ import { Outlet } from 'react-router';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+    const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Replace this with the actual loading time of your assets
+  }, []);
     return (
+        isLoading ? (
+            <div className="loading">
+                <div className="loader" />
+            </div>
+        ) : (
         <Fragment>
         <nav>
             <div className='navbar'>
@@ -36,6 +48,7 @@ const Navbar = () => {
         </nav>
         <Outlet />
         </Fragment>
+    )
     )
 }
 
