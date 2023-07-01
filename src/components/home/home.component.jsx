@@ -9,6 +9,7 @@ import job from '../../assets/job.png'
 import post from '../../assets/post.png'
 import CTA from "../CTA/CTA.component";
 import Clients from "../clients/clients.component";
+import Footer from "../footer/footer.component";
 
 const Home = () => {
 
@@ -40,6 +41,7 @@ const Home = () => {
 
             <CTA />
 
+            <Footer />
         </div>
     );
 }   

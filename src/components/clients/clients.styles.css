@@ -24,3 +24,13 @@
 .clients img {
     width: 74px;
 }
+
+.shader4 {
+    position: absolute;
+    z-index: 0;
+    width: 50%;
+    height: 50%;
+     background: linear-gradient(180deg, rgba(187, 165, 255, 0.356) 0%, #214d7663 100%);
+  filter: blur(123px);
+  left: 25vw;
+}
