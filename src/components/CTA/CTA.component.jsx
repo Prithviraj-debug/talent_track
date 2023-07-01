@@ -9,7 +9,7 @@ const CTA = () => {
             <p className="cta__para">
             Join the countless organizations who have already experienced the benefits of our online recruitment solution. Sign up today for a free trial and take your recruitment efforts to the next level!
             </p>
-            <Link to="/signup">
+            <Link to="/signin">
             <button className="cta__btn">Get Started</button>
             </Link>
         </div>

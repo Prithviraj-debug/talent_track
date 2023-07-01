@@ -1,4 +1,8 @@
 .limiter {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  align-items: center;
   background-color: white;
   border-radius: 20px 20px 0 0;
     -webkit-box-shadow: 0px -5px 19px -7px rgba(117,117,117,0.87);
@@ -31,19 +35,8 @@ button:hover {
     cursor: pointer;
 }
 
-.container-login100 {
-  width: 100%;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-}
-
 .wrap-login100 {
-  width: 960px;
+  width: fit-content;
   background: #7cadb6b9;
   border-radius: 10px;
   overflow: hidden;
@@ -56,18 +49,6 @@ button:hover {
 -moz-box-shadow: 0px 0px 11px -1px rgba(0,0,0,0.44);
 }
 
-.login100-pic {
-  width: 316px;
-}
-
-.login100-pic img {
-  max-width: 100%;
-}
-
-
-.login100-form {
-  width: 316px;
-}
 
 .login100-form-title {
   font-family: Poppins-Bold;
@@ -140,8 +121,13 @@ button:hover {
 [ Responsive ]*/
 
 @media (max-width: 984px) {
+  .limiter {
+    flex-direction: column;
+  }
+
   .wrap-login100 {
-    width: 50%;
+    width: 60vw;
+    margin-bottom: 20px;
   }
 
   .input100 {
@@ -164,13 +150,13 @@ button:hover {
 
 @media (max-width: 610px) {
   .wrap-login100 {
-    width: 80%;
+    width: 90vw;
   }
 }
 
 @media (max-width: 377px){
   .wrap-login100 {
-    width: 100%;
+    width: 100vw;
     height: 500px;
     align-items: center;
   }

@@ -11,6 +11,7 @@
     border-radius: 20px;
     background: linear-gradient(90deg, #add8df 0%, #7CADB6 100%);
     z-index: 187687 !important;
+    box-shadow: rgba(0, 0, 0, 0.153) 0px 10px 50px;
 }
 
 .cta p {

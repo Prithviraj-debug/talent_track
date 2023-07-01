@@ -9,6 +9,7 @@
     font-size: 40px;
     letter-spacing: 3px;
     padding: 10px;
+    margin-bottom: 30px;
 }
 
 .clients {
@@ -33,4 +34,18 @@
      background: linear-gradient(180deg, rgba(187, 165, 255, 0.356) 0%, #214d7663 100%);
   filter: blur(123px);
   left: 25vw;
+}
+
+@media (max-width: 500px) {
+    .clients {
+        justify-content: center;
+    }
+
+    .clients img {
+        width: 50px;
+    }
+    
+    .clients-container h1 {
+        font-size: 30px;
+    }
 }

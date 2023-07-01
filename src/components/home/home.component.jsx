@@ -6,6 +6,7 @@ import down from '../../assets/down.png'
 import img from '../../assets/img.png'
 import search from '../../assets/search.png'
 import job from '../../assets/job.png'
+import business from '../../assets/business.png'
 import post from '../../assets/post.png'
 import CTA from "../CTA/CTA.component";
 import Clients from "../clients/clients.component";
@@ -26,7 +27,7 @@ const Home = () => {
             <div id="sectionTwo" className="home-container inverted">
                 <HomeLeft heading={["Advanced  ", <span>Candidate </span>, "Search"]} desc="Our intelligent search algorithms allow you to quickly filter through a vast pool of candidates, enabling you to find the perfect fit for your organization. Save time and effort by easily narrowing down your search based on specific qualifications, experience, and skills." button={{ divClass: "exploreMore", imgClass: "down", imgSrc: search, imgAlt: "search image", btnText: "Search Now", linkTo: '/find' }} />
 
-                <HomeRight img={img} stats={false} />
+                <HomeRight img={business} stats={false} />
                 <div className="shader3" />
             </div>
 

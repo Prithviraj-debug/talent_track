@@ -27,19 +27,19 @@ const Navbar = () => {
             <div className='navbar'>
                 <div className="logoSection">
                     <Link to='/'>
-                        <img src={logo} alt="logo" srcset="" />
+                        <img src={logo} alt="logo" />
                     </Link>
                 </div>
 
                 <ul className="nav-links">
                     <Link to='/'>
-                        <li>Home</li>
+                        <li key="home">Home</li>
                     </Link>
                     <Link to='/signin'>
-                        <li>Sign In</li>
+                        <li key="sigin">Sign In</li>
                     </Link>
                     <Link to='/find'>
-                        <li>Search Candidate</li>
+                        <li key="search">Search Candidate</li>
                     </Link>
                 </ul>
 
