@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from 'react';
 import { Outlet } from "react-router";
-import img from '../../assets/img.png'
-import down from '../../assets/down.png'
 import './home.styles.css'
+import HomeLeft from "../home-left/home-left.component";
+import HomeRight from "../home-right/home-right.component";
+import down from '../../assets/down.png'
+import img from '../../assets/img.png'
+import search from '../../assets/search.png'
+import job from '../../assets/job.png'
+import post from '../../assets/post.png'
 
 const Home = () => {
 
@@ -10,43 +14,28 @@ const Home = () => {
         <div className="home">
                 <Outlet />
             <div className="home-container">
-                <div className="home-left">
-                    <h1>Revolutionize Your <span>Hiring </span>Process</h1>
-                    <p className="sub-heading"> with Our Online Recruitment Solution</p>
-                    <p className="desc">
-                    Welcome to our cutting-edge online recruitment solution, designed to streamline and optimize your hiring process. Whether you're a hiring manager or an HR professional, our platform offers a range of powerful features to help you find the best talent efficiently and effectively. From posting jobs to managing applications, our platform has you covered.
-                    </p>
+                <HomeLeft heading={["Revolutionize Your ", <span>Hiring </span>, "Process"]} desc="Welcome to our cutting-edge online recruitment solution, designed to streamline and optimize your hiring process. Whether you're a hiring manager or an HR professional, our platform offers a range of powerful features to help you find the best talent efficiently and effectively. From posting jobs to managing applications, our platform has you covered." subHead="with Our Online Recruitment Solution" button={{ divClass: "exploreMore", imgClass: "down", imgSrc: down, imgAlt: "down image", btnText: "Explore More" }} />
 
-                    <div className="exploreMore">
-                        <button>
-                    Explore More
-                    <img className="down" src={down} alt="down" />
-                        </button>
-                    </div>
-                </div>
-                <div className="home-right">
-                    <img src={img} alt="" />
-                    <div className="stats">
-                        <div>
-                            <h2>3000+</h2>
-                            <p>Jobs Posted</p>
-                        </div>
-                        <div>
-                            <h2>1000+</h2>
-                            <p>Companies</p>
-                        </div>
-                        <div>
-                            <h2>10000+</h2>
-                            <p>Applications</p>
-                        </div>
-                    </div>
-                </div>
-    
+                <HomeRight img={img} stats={true} />
+                <div className="shader3" />
+            </div>
+
+            <div id="sectionTwo" className="home-container inverted">
+                <HomeLeft heading={["Advanced  ", <span>Candidate </span>, "Search"]} desc="Our intelligent search algorithms allow you to quickly filter through a vast pool of candidates, enabling you to find the perfect fit for your organization. Save time and effort by easily narrowing down your search based on specific qualifications, experience, and skills." button={{ divClass: "exploreMore", imgClass: "down", imgSrc: search, imgAlt: "search image", btnText: "Search Now", linkTo: '/find' }} />
+
+                <HomeRight img={img} stats={false} />
+                <div className="shader3" />
+            </div>
+
+            <div className="home-container">
+                <HomeLeft heading={["Automated ", <span>Job </span>, "Posting"]} desc="Say goodbye to the hassle of manually posting job openings across multiple platforms. With our online recruitment solution, you can effortlessly create and distribute job postings to various job boards, social media platforms, and industry-specific websites, reaching a wider audience and attracting top talent." subHead="" button={{ divClass: "exploreMore", imgClass: "down", imgSrc: post, imgAlt: "down image", btnText: "Post Now", linkTo: '/signin' }} />
+
+                <HomeRight img={job} stats={false} />
                 <div className="shader3" />
             </div>
 
         </div>
     );
-}
+}   
 
 export default Home;

@@ -29,7 +29,7 @@ nav {
     color: #e6e6e6;
 }
 
-.nav-links a {
+a {
     text-decoration: none;
     color: white;
 }
@@ -44,3 +44,60 @@ nav {
     width: 42px;
     margin-left: 10px;
 }
+
+.menu {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #7CADB6;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    z-index: 999;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.mobile-nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+@media (min-width: 1000px) {
+    .mobile-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .nav-links, .user {
+        display: none !important;
+    }
+
+    .menu {
+        display: block;
+        cursor: pointer;
+        width: 25px;
+    }
+}
+
