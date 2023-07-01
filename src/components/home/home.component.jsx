@@ -11,6 +11,7 @@ import post from '../../assets/post.png'
 import CTA from "../CTA/CTA.component";
 import Clients from "../clients/clients.component";
 import Footer from "../footer/footer.component";
+import Benefits from "../benefits/benefits.component";
 
 const Home = () => {
 
@@ -37,6 +38,8 @@ const Home = () => {
                 <HomeRight img={job} stats={false} />
                 <div className="shader3" />
             </div>
+
+            <Benefits />
             
             <Clients />
 
