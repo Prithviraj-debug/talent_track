@@ -7,6 +7,8 @@ import img from '../../assets/img.png'
 import search from '../../assets/search.png'
 import job from '../../assets/job.png'
 import post from '../../assets/post.png'
+import CTA from "../CTA/CTA.component";
+import Clients from "../clients/clients.component";
 
 const Home = () => {
 
@@ -33,6 +35,10 @@ const Home = () => {
                 <HomeRight img={job} stats={false} />
                 <div className="shader3" />
             </div>
+            
+            <Clients />
+
+            <CTA />
 
         </div>
     );

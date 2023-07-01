@@ -1,0 +1,26 @@
+.clients-container {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.clients-container h1 {
+    color: #232323;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 3px;
+    padding: 10px;
+}
+
+.clients {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 15px;
+}
+
+.clients img {
+    width: 74px;
+}
