@@ -1,0 +1,8 @@
+.card-container p {
+    display: flex;
+    align-items: center;
+}
+
+.card-container p img {
+    width: 26px;
+}

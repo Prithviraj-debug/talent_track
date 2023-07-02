@@ -5,25 +5,51 @@ import Card from "../card/card.component";
 const SearchCandidate = () => {
     
     const [isLoading, setIsLoading] = useState(true);
-    const [monsters, setMonsters] = useState([]);
-  const [filteredMonsters, setFilteredMonsters] = useState(monsters);
+    const [users, setUsers] = useState([]);
+  const [filteredUsers, setFilteredUsers] = useState(users);
   const [searchField, setSearchField] = useState('');
+
+  const locations = [
+    "Mumbai",
+    "Delhi",
+    "Bangalore",
+    "Hyderabad",
+    "Ahmedabad",
+    "Chennai",
+    "Kolkata",
+    "Surat",
+    "Pune",
+    "Jaipur",
+  ];
+
+  const jobTitlles = [
+    "Software Engineer",
+    "Software Developer",
+    "Frontend Developer",
+    "Backend Developer",
+    "Fullstack Developer",
+    "DevOps Engineer",
+    "Data Scientist",
+    "Data Analyst",
+    "Data Engineer",
+    "Machine Learning Engineer",
+  ]
   
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
     .then((res) => res.json())
     .then((users) => {
-      setMonsters(users);
+      setUsers(users);
     })
   }, []);
 
   useEffect(() => {
-    const newFilteredMonsters = monsters.filter((monster) => {
-      return monster.name.toLocaleLowerCase().includes(searchField);
+    const newFilteredUsers = users.filter((user) => {
+      return user.name.toLocaleLowerCase().includes(searchField) || user.address.city.toLocaleLowerCase().includes(searchField) || user.jobTitle.toLocaleLowerCase().includes(searchField);
     });
 
-    setFilteredMonsters(newFilteredMonsters);
-  }, [monsters, searchField]);
+    setFilteredUsers(newFilteredUsers);
+  }, [users, searchField]);
 
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
@@ -55,8 +81,12 @@ const SearchCandidate = () => {
 
             <div className="card-list">
                 {
-                    filteredMonsters.map((monster) => {
-                        return <Card monster={monster} />
+                  filteredUsers.map((user) => {
+                    user.jobTitle = jobTitlles[user.id - 1];
+                    user.address.city = locations[user.id - 1];
+                        return (
+                          <Card user={user} />
+                        );
                     })
                 }
             </div>
