@@ -7,8 +7,8 @@ const HomeLeft = (props) => {
     const handleButtonClick = () => {
         console.log("clicked");
         window.scrollTo({
-          top: window.innerHeight, // Scroll down by the viewport height
-          behavior: 'smooth', // Add smooth scrolling effect
+          top: window.innerHeight,
+          behavior: 'smooth', 
         });
       };
 
@@ -22,10 +22,10 @@ const HomeLeft = (props) => {
                 button && (
                     <div className={`${divClass}`}>
                         <Link to={linkTo}>
-                        <button onClick={handleButtonClick}>
-                            {btnText}
-                            <img className={`${imgClass}`} src={imgSrc} alt={`${imgAlt}`} />
-                        </button>
+                            <button onClick={handleButtonClick}>
+                                {btnText}
+                                <img className={`${imgClass}`} src={imgSrc} alt={`${imgAlt}`} />
+                            </button>
                         </Link>
                     </div>
                 )

@@ -1,11 +1,18 @@
 import SignIn from "../sign-in/sign-in.component";
 import SignUp from "../sign-up/sign-up.component";
+import down from '../../assets/down.png'
 
 const Authentication = () => {
     return (
         <div className="limiter">
-            <SignUp />
             <SignIn />
+            {/* <div className="exploreMore">
+                <button>
+                    New User?
+                    <img className="down" src={down} alt="down image" />
+                </button>
+            </div> */}
+            <SignUp />
         </div>
     )
 }

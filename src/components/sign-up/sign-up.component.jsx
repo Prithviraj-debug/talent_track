@@ -3,7 +3,7 @@ import "./sign-up.styles.css";
 
 const SignUp = () => {
     return (
-        <div>
+        <div className="signup-container">
             <div class="wrap-login100">
                 <form class="login100-form validate-form">
                     <span class="login100-form-title">
