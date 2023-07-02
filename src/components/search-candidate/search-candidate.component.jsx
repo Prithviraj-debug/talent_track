@@ -3,7 +3,8 @@ import "./search-candidate.styles.css";
 import Card from "../card/card.component";
 
 const SearchCandidate = () => {
-
+    
+    const [isLoading, setIsLoading] = useState(true);
     const [monsters, setMonsters] = useState([]);
   const [filteredMonsters, setFilteredMonsters] = useState(monsters);
   const [searchField, setSearchField] = useState('');
@@ -29,7 +30,17 @@ const SearchCandidate = () => {
     setSearchField(searchFieldString);
   }
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Replace this with the actual loading time of your assets
+  }, []);
     return (
+        isLoading ? (
+            <div className="loading">
+                <div className="loader" />
+            </div>
+        ) : (
         <div className="search-candidate">
             <div className="search-candidate__form">
                 <form>
@@ -50,7 +61,8 @@ const SearchCandidate = () => {
                 }
             </div>
         </div>
-    );
+    ));
+    
 }
 
 export default SearchCandidate;
