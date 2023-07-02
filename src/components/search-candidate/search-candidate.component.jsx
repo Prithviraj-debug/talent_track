@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./search-candidate.styles.css";
 import Card from "../card/card.component";
+import search from "../../assets/search.png";
 
 const SearchCandidate = () => {
     
@@ -69,11 +70,12 @@ const SearchCandidate = () => {
         ) : (
         <div className="search-candidate">
             <div className="search-candidate__form">
-                <form>
+                <form className="search-box">
+                    <img src={search} alt="search" className="search-icon" />
                     <input 
-                        className="search-box" 
-                        type="text" 
-                        placeholder="Search Candidate"
+                        className="search-input"
+                        type="search" 
+                        placeholder="Search Candidate by Name, City or Job Title"
                         onChange={onSearchChange}
                     />
                 </form>
