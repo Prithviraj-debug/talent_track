@@ -1,9 +1,10 @@
 import React from "react";
 import "./sign-in.styles.css";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
     return (
-        <div>
+        <div className="limiter">
             <div class="wrap-login100">
                 <form class="login100-form validate-form">
                     <span class="login100-form-title">
@@ -22,6 +23,14 @@ const SignIn = () => {
                         <button class="login100-form-btn" name="Login">
                             Continue
                         </button>
+                    </div>
+
+                    <div className="switch">
+                        <p className="signup">Don't have an account? &nbsp;
+                            <Link to='/signup'>
+                                Sign Up
+                            </Link>
+                        </p>
                     </div>
                 </form>
             </div>
