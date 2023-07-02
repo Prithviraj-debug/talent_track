@@ -23,9 +23,9 @@
     background-color: #fff;
     border-radius: 20px 20px 0 0;
     -webkit-box-shadow: 0px -5px 19px -7px rgba(117,117,117,0.87);
--moz-box-shadow: 0px -5px 19px -7px rgba(117,117,117,0.87);
-box-shadow: 0px -5px 19px -7px rgba(117,117,117,0.87);
-z-index: -2;
+    -moz-box-shadow: 0px -5px 19px -7px rgba(117,117,117,0.87);
+    box-shadow: 0px -5px 19px -7px rgba(117,117,117,0.87);
+    z-index: -2;
 }
 
 .home-container {
@@ -112,7 +112,7 @@ z-index: -2;
     height: 35%;
     top: 0;
     background: linear-gradient(90deg, #b5f1fc 0%, #24d0ee 100%);
-  filter: blur(900px);
+    filter: blur(900px);
 }
 
 .shader2 {
@@ -123,7 +123,7 @@ z-index: -2;
     border-radius: 50%;
     bottom: 40%;
     background: #b5f1fc;
-  filter: blur(450px);
+    filter: blur(450px);
 }
 
 .shader3 {
@@ -131,8 +131,8 @@ z-index: -2;
     z-index: 0;
     width: 50%;
     height: 50%;
-     background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d7633 100%);
-  filter: blur(123px);
+    background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d7633 100%);
+    filter: blur(123px);
 }
 
 .exploreMore button {
