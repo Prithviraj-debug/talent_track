@@ -37,16 +37,17 @@ const SearchCandidate = () => {
   ]
   
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch("https://dummyjson.com/users?limit=100")
     .then((res) => res.json())
-    .then((users) => {
-      setUsers(users);
+    .then((data) => {
+      setUsers(data.users);
+      console.log();
     })
   }, []);
 
   useEffect(() => {
     const newFilteredUsers = users.filter((user) => {
-      return user.name.toLocaleLowerCase().includes(searchField) || user.address.city.toLocaleLowerCase().includes(searchField) || user.jobTitle.toLocaleLowerCase().includes(searchField);
+      return user.username.toLocaleLowerCase().includes(searchField)
     });
 
     setFilteredUsers(newFilteredUsers);
@@ -84,8 +85,6 @@ const SearchCandidate = () => {
             <div className="card-list">
                 {
                   filteredUsers.map((user) => {
-                    user.jobTitle = jobTitlles[user.id - 1];
-                    user.address.city = locations[user.id - 1];
                         return (
                           <Card user={user} />
                         );

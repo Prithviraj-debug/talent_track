@@ -5,6 +5,7 @@ import Navbar from './components/navbar/navbar.component'
 import SearchCandidate from './components/search-candidate/search-candidate.component'
 import SignIn from './components/sign-in/sign-in.component'
 import SignUp from './components/sign-up/sign-up.component'
+import CandidateDetails from './components/candidate-details/candidate-details.component'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="signup" element={<SignUp />} />
         <Route path='find' element={<SearchCandidate />} />
       </Route>
+        <Route path='/find/:id' element={<CandidateDetails />} />
     </Routes>
   )
 }

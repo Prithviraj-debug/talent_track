@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import logo from '../../assets/TalentTrack.png';
 import './navbar.styles.css'
 import avatar from '../../assets/avatar.png'
@@ -7,8 +7,17 @@ import menu from '../../assets/menu.svg'
 import { Fragment } from 'react';
 import { Outlet } from 'react-router';
 import { Link } from 'react-router-dom';
+import { UserContext } from "../../components/contexts/user.context";
+import { signOutUser } from '../../utils/firebase.utils';
 
 const Navbar = () => {
+    const { currentUser, setCurrentUser } = useContext(UserContext);
+
+    const signOutHandler = async () => {
+        await signOutUser();
+        setCurrentUser(null); 
+    }
+
     const [toggle, setToggle] = useState(false)
     const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -35,9 +44,18 @@ const Navbar = () => {
                     <Link to='/'>
                         <li key="home">Home</li>
                     </Link>
-                    <Link to='/signin'>
-                        <li key="sigin">Sign In</li>
-                    </Link>
+
+                    {
+                        currentUser ? (
+                            <a>
+                                <li onClick={signOutHandler}>SIGN OUT </li>
+                            </a>
+                        ) : (
+                        <Link to='/signin'>
+                            <li key="sigin">Sign In</li>
+                        </Link>
+                        )
+                    }
                     <Link to='/find'>
                         <li key="search">Search Candidate</li>
                     </Link>
