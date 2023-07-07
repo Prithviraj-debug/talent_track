@@ -26,8 +26,17 @@ const SignIn = () => {
 
     const signInWithGoogle = async () => {
         const { user } = await signInWithGooglePopup();
-        console.log(user);
         await createUserProfileDocument(user);
+        setCurrentUser(user);
+        Swal.fire(
+            'Success!',
+            'Logged In!',
+            'success'
+            )
+        setTimeout(() => {
+            navigate('/');
+        }
+        , 1000);
     }
 
     const handleSubmit = async (event) => {
