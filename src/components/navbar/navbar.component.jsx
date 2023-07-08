@@ -5,14 +5,22 @@ import avatar from '../../assets/avatar.png'
 import close from '../../assets/close.svg'
 import menu from '../../assets/menu.svg'
 import { Fragment } from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import { UserContext } from "../../components/contexts/user.context";
 import { signOutUser } from '../../utils/firebase.utils';
 
 const Navbar = () => {
+    const currentPath = useLocation();
+    const onTop = () => {
+        window.scrollTo(0, 0);
+    }
+    useEffect(() => {
+        onTop();
+    }, [currentPath])
+    
     const { currentUser, setCurrentUser } = useContext(UserContext);
-
+    console.log(currentUser);
     const signOutHandler = async () => {
         await signOutUser();
         setCurrentUser(null); 
@@ -62,7 +70,9 @@ const Navbar = () => {
                 </ul>
 
                 <div className="user">
-                    <p>Welcome <span></span></p>
+                    <p>Welcome <span className='userID'>{
+                        currentUser ? currentUser.displayName ? currentUser.displayName : currentUser.email : null
+                    }</span></p>
                     <img src={avatar} alt="user" />
                 </div>
 
@@ -77,9 +87,17 @@ const Navbar = () => {
                         <Link to='/'>
                             <li>Home</li>
                         </Link>
+                        {
+                        currentUser ? (
+                            <a>
+                                <li onClick={signOutHandler}>SIGN OUT </li>
+                            </a>
+                        ) : (
                         <Link to='/signin'>
-                            <li>Sign In</li>
+                            <li key="sigin">Sign In</li>
                         </Link>
+                        )
+                    }
                         <Link to='/find'>
                             <li>Search Candidate</li>
                         </Link>

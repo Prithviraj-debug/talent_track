@@ -6,7 +6,7 @@ import { UserContext } from "../contexts/user.context";
 import Swal from "sweetalert2";
 
 const defaultFormFields = {
-    username: '',
+    displayName: '',
     email: '',
     password: '',
     phone: '',
@@ -17,7 +17,7 @@ const SignUp = () => {
     const navigate = useNavigate();
     const [ formFields, setFormFields ] = useState(defaultFormFields);
 
-    const { username, email, password, confirmPassword } = formFields;
+    const { displayName, email, password, confirmPassword } = formFields;
 
     const { setCurrentUser } = useContext(UserContext);
 
@@ -39,7 +39,7 @@ const SignUp = () => {
 
         try {
             const { user } = await createUserWithEmailAndPasswordHandler(email, password);
-            await createUserProfileDocument(user, { username });
+            await createUserProfileDocument(user, { displayName });
             setCurrentUser(user);
             resetFormFields();
             Swal.fire(
@@ -82,7 +82,7 @@ const SignUp = () => {
                     </span>
 
                     <div class="wrap-input100 validate-input">
-                        <input class="input100" type="text" name="username" placeholder="User Name" onChange={handleChange} />
+                        <input class="input100" type="text" name="displayName" placeholder="User Name" onChange={handleChange} />
                     </div>
 
                     <div class="wrap-input100 validate-input">
