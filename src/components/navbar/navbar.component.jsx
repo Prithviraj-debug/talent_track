@@ -11,14 +11,14 @@ import { UserContext } from "../../components/contexts/user.context";
 import { signOutUser } from '../../utils/firebase.utils';
 
 const Navbar = () => {
-    const currentPath = useLocation();
+    const currentPath = useLocation().pathname;
     const onTop = () => {
         window.scrollTo(0, 0);
     }
     useEffect(() => {
         onTop();
     }, [currentPath])
-    
+
     const { currentUser, setCurrentUser } = useContext(UserContext);
     console.log(currentUser);
     const signOutHandler = async () => {
@@ -31,7 +31,7 @@ const Navbar = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Replace this with the actual loading time of your assets
+    }, 2000);
   }, []);
     return (
         isLoading ? (
