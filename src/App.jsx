@@ -6,6 +6,7 @@ import SearchCandidate from './components/search-candidate/search-candidate.comp
 import SignIn from './components/sign-in/sign-in.component'
 import SignUp from './components/sign-up/sign-up.component'
 import CandidateDetails from './components/candidate-details/candidate-details.component'
+import Profile from './components/profile/profile.component'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="signin" element={<SignIn />} />
         <Route path="signup" element={<SignUp />} />
         <Route path='find' element={<SearchCandidate />} />
+        <Route path='profile' element={<Profile />} />
       </Route>
         <Route path='/find/:id' element={<CandidateDetails />} />
     </Routes>

@@ -70,9 +70,11 @@ const Navbar = () => {
                 </ul>
 
                 <div className="user">
-                    <p>Welcome <span className='userID'>{
-                        currentUser ? currentUser.displayName ? currentUser.displayName : currentUser.email : null
-                    }</span></p>
+                        { currentUser && (
+                            <Link to='/profile'>
+                                Update Profile
+                            </Link>
+                        ) }
                     <img src={avatar} alt="user" />
                 </div>
 
